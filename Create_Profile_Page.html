@@ -3,8 +3,10 @@
     <head>
         <title>User Profile Page</title>
         <script type="text/javascript">
-            function fn1() {
+            function info_to_var() {
                 var first_name = document.getElementById("fname").value;
+                var last_name = document.getElementById("lname").value;
+                alert("Your first name is " + first_name + " " + last_name);
             }
         </script>
     </head>
@@ -12,6 +14,10 @@
         <h2>Create User Profile</h2>
         <input id="fname" placeholder="Enter Your First Name">
         <br>
-        <button onclick="fn1()" id = "btn1">Submit</button> 
+        <input id="lname" placeholder = "Enter Your Last Name">
+        <br>
+        <input id="email" placeholder = "Enter Your Email">
+        <br>
+        <button onclick="info_to_var()" id = "btn1">Submit</button> 
     </body>
 </html>
