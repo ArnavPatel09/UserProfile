@@ -35,7 +35,7 @@
         <form action="/" method="GET">
             <div>
                 <label for="phoneNumber">Phone Number</label>
-                <input onkeydown="phoneNumberFormat()" id="phoneNumber"/>
+                <input onkeydown="phoneNumberFormat()" id="phoneNumber" placeholder="(123) 456-7890"/>
             </div>
         </form>
 
@@ -45,34 +45,13 @@
                 <input type="radio" name="gender"> Male
                 <input type="radio" name="gender"> Female
                 <input type="radio" name="gender"> Other
-
             </div>
         </form>
 
     </body>
 
 
-    <script>
-        function formatPhoneNumber(value) {
-            if(!value) return value;
-            const phoneNum = value.replace(/[^\d]/g, '');
-            const phoneNumberLength = phoneNum.length;
-            if (phoneNumberLength < 4) return phoneNum;
-            if (phoneNumberLength < 7) {
-                return `(${phoneNum.slice(0, 3)}) ${phoneNum.slice(3)}`;
-            }
-            return `(${phoneNum.slice(0, 3)}) ${phoneNum.slice(
-                3,
-                6,
-                )}-${phoneNum.slice(6, 9)}`;
-        }
-
-        function phoneNumberFormat() {
-            const inputField = document.getElementById('phoneNumber');
-            const formattedInputValue = formatPhoneNumber(inputField.value);
-            inputField.value = formattedInputValue;
-        }
-    </script>
+    <script src="js/phone.js"></script>
 
 
 </html>
