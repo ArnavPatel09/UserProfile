@@ -10,29 +10,72 @@
             }
         </script>
     </head>
-
-    <form class="form" id="form">
-        <div class="form-control">
-            <label>First Name</label>
-            <input type="text" placeholder="Enter First Name Here" id="fname">
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <small></small>
-        </div>
-    </form>
-
-    <!--
     <body>
-        <h2>Create User Profile</h2>
-        <input id="fname" placeholder="Enter Your First Name">
-        <br>
-        <input id="lname" placeholder = "Enter Your Last Name">
-        <br>
-        <input id="email" placeholder = "Enter Your Email">
-        <br>
-        <br>
-        <br>
-        <button onclick="info_to_var()" id = "btn1">Submit</button> 
+        <form action="/" method="GET">
+            <div>
+                <label for="firstName">First Name</label>
+                <input id="firstName" fname="firstName" type="text" placeholder="John">
+            </div>
+        </form>
+
+        <form action="/" method="GET">
+            <div>
+                <label for="lastName">Last Name</label>
+                <input id="lastName" lastName="lastName" type="text" placeholder="Doe">
+            </div>
+        </form>
+
+        <form action="/" method="GET">
+            <div>
+                <label for="email">Email</label>
+                <input id="email" email="email" type="text" placeholder="john.doe@email.com">
+            </div>
+        </form>
+
+        <form action="/" method="GET">
+            <div>
+                <label for="phoneNumber">Phone Number</label>
+                <input onkeydown="phoneNumberFormat()" id="phoneNumber"/>
+            </div>
+        </form>
+
+        <form action="/" method="GET">
+            <div>
+                <label for="gender">Gender</label>
+                <input type="radio" name="gender"> Male
+                <input type="radio" name="gender"> Female
+                <input type="radio" name="gender"> Other
+
+            </div>
+        </form>
+
     </body>
-    -->
+
+
+    <script>
+        function formatPhoneNumber(value) {
+            if(!value) return value;
+            const phoneNum = value.replace(/[^\d]/g, '');
+            const phoneNumberLength = phoneNum.length;
+            if (phoneNumberLength < 4) return phoneNum;
+            if (phoneNumberLength < 7) {
+                return `(${phoneNum.slice(0, 3)}) ${phoneNum.slice(3)}`;
+            }
+            return `(${phoneNum.slice(0, 3)}) ${phoneNum.slice(
+                3,
+                6,
+                )}-${phoneNum.slice(6, 9)}`;
+        }
+
+        function phoneNumberFormat() {
+            const inputField = document.getElementById('phoneNumber');
+            const formattedInputValue = formatPhoneNumber(inputField.value);
+            inputField.value = formattedInputValue;
+        }
+    </script>
+
+
 </html>
+
+
+
