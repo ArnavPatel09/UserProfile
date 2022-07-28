@@ -2,56 +2,75 @@
 <html>
     <head>
         <title>User Profile Page</title>
-        <script type="text/javascript">
-            function info_to_var() {
-                var first_name = document.getElementById("fname").value;
-                var last_name = document.getElementById("lname").value;
-                alert("Your first name is " + first_name + " " + last_name);
-            }
-        </script>
+        <script src="js/phone.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script defer src="js/index.js"></script>
     </head>
     <body>
-        <form action="/" method="GET">
-            <div>
-                <label for="firstName">First Name</label>
-                <input id="firstName" fname="firstName" type="text" placeholder="John">
-            </div>
-        </form>
 
-        <form action="/" method="GET">
-            <div>
-                <label for="lastName">Last Name</label>
-                <input id="lastName" lastName="lastName" type="text" placeholder="Doe">
-            </div>
-        </form>
+        </div>
 
-        <form action="/" method="GET">
-            <div>
-                <label for="email">Email</label>
-                <input id="email" email="email" type="text" placeholder="john.doe@email.com">
-            </div>
-        </form>
+        <div class="container">
+            <form id="form" action="/">
+                <h1>Registration</h1>
+                <div class="input-control">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" name="firstName" type="text" placeholder="John">
+                    <div class="error"></div>
+                </div>
 
-        <form action="/" method="GET">
-            <div>
-                <label for="phoneNumber">Phone Number</label>
-                <input onkeydown="phoneNumberFormat()" id="phoneNumber" placeholder="(123) 456-7890"/>
-            </div>
-        </form>
+                <div class="input-control">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" name="lastName" type="text" placeholder="Doe">
+                    <div class="error"></div>
+                </div>
+                
+                <div class="input-control">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="text" placeholder="john.doe@email.com">
+                    <div class="error"></div>
+                </div>
 
-        <form action="/" method="GET">
-            <div>
-                <label for="gender">Gender</label>
-                <input type="radio" name="gender"> Male
-                <input type="radio" name="gender"> Female
-                <input type="radio" name="gender"> Other
-            </div>
-        </form>
+                <div class="input-control">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input onkeydown="phoneNumberFormat()" id="phoneNumber" placeholder="(123) 456-7890"/>
+                    <div class="error"></div>
+                </div>
+
+            <!--
+                CSS FOR THE RADIO BUTTONS NEEDS WORK
+                IMPLEMENT IT INTO ERROR
+                IMPLEMENT INTO BACKEND
+
+                <div class="input-control"></div>
+                    <div class="custom-radio-btn">
+                        <label for="gender">Gender</label>
+                        <input type="radio" name="gender"> Male
+                        <input type="radio" name="gender"> Female
+                        <input type="radio" name="gender"> Other
+                        <div class="error"></div>
+                    </div>
+                </div>
+            -->
+
+
+
+
+                <div class="input-control">
+                    <label for="password"> Password</label>
+                    <input id="password" name="password" type="password">
+                    <div class="error"></div>
+                </div>
+
+                <button type="submit">Sign Up</button>
+
+            </form>
+        </div>
 
     </body>
-
-
-    <script src="js/phone.js"></script>
 
 
 </html>
